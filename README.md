@@ -43,8 +43,9 @@ source ./venv_demucs/bin/activate
 python3 -m pip install --upgrade pip
 ```
 
-Install `demucs` in the virtual environment.
-https://github.com/adefossez/demucs#for-musicians
+Install
+[`demucs` PyPI package](https://pypi.org/project/demucs/)
+in the virtual environment.
 ```sh
 python3 -m pip install -U demucs
 ```
