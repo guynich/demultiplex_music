@@ -50,7 +50,9 @@ in the virtual environment.
 python3 -m pip install -U demucs
 ```
 
-I hit a numpy version error triggered in `/torch/nn/modules/transformer.py`.
+On macOS I hit a numpy version error triggered in
+`/torch/nn/modules/transformer.py`.  This error did not duplicate on Ubuntu
+22.04.05 with numpy version 2.2.26.
 ```sh
 demucs
 ```
@@ -64,7 +66,7 @@ If you are a user of the module, the easiest solution will be to
 downgrade to 'numpy<2' or try to upgrade the affected module.
 We expect that some modules will need time to support NumPy 2.
 ```
-I downgraded numpy in the virtual environment to version 1.26.4.
+On macOS I downgraded numpy in the virtual environment to version 1.26.4.
 ```sh
 python3 -m pip install "numpy<2"
 ```
@@ -142,5 +144,6 @@ RAM.  The `python3.12` process used all four cores up to ~380% and memory usage
 was in range [1, 1.3] GB.
 
 # Next steps
-* [ ] Try demucs on Linux.
+* [x] Try demucs on Ubuntu 22.04.5 LTS.  It generates the same four WAV files.
+* [ ] Try htdemucs_ft model.
 * [ ] Dataset labelling using Python scripting.
