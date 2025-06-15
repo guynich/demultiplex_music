@@ -9,11 +9,13 @@ The source repo licence is the permissive MIT.
 - [demultiplex music](#demultiplex-music)
 - [Installating demucs](#installating-demucs)
   - [Python version](#python-version)
-  - [Virtual enviroment](#virtual-enviroment)
+  - [Virtual environment](#virtual-environment)
 - [Runs](#runs)
   - [Run1](#run1)
   - [Run2 --two-stems=vocals](#run2---two-stemsvocals)
   - [System load](#system-load)
+    - [MacOS CPU](#macos-cpu)
+    - [Ubuntu GPU](#ubuntu-gpu)
 - [Next steps](#next-steps)
 
 # Installating demucs
@@ -23,7 +25,9 @@ Tested on MacBook Pro 2020 (Intel x86) with macOS 15.5.
 ## Python version
 
 I used `pyenv` [repo](https://github.com/pyenv/pyenv) to install a suitable
-Python version on macOS.  The model uses PyTorch which does not support Python
+Python version
+[>= 3.8](https://github.com/adefossez/demucs#requirements)
+on macOS.  The model uses PyTorch which does not support Python
 3.13 as of June 14, 2025.
 ```sh
 python3 --version
@@ -32,7 +36,7 @@ python3 --version
 Python 3.12.3
 ```
 
-## Virtual enviroment
+## Virtual environment
 
 Create a virtual environment.  I used Python's `venv` for this.
 ```sh
@@ -139,11 +143,19 @@ I was impressed on my first listen.
 
 ## System load
 
-I ran these on MacBook Pro 2020 (Intel) with quad-core i5 and 16GB
-RAM.  The `python3.12` process used all four cores up to ~380% and memory usage
+### MacOS CPU
+
+I ran these on MacBook Pro 2020 (Intel) with quad-core i5 and 16GB RAM.  The
+`python3.12` process used all four CPU cores up to ~380% and memory usage
 was in range [1, 1.3] GB.
+
+### Ubuntu GPU
+
+Running the same separation task on workstation GPU (NVidia RTX A2000 Ampere)
+took just 13 seconds or >20x real-time.  GPU memory usage for the Python
+3.10 process was ~900MB.
 
 # Next steps
 * [x] Try demucs on Ubuntu 22.04.5 LTS.  It generates the same four WAV files.
 * [ ] Try htdemucs_ft model.
-* [ ] Dataset labelling using Python scripting.
+* [ ] Dataset labelling using Python scripting on GPU.
