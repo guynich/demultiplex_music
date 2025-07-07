@@ -159,3 +159,4 @@ took just 13 seconds or >20x real-time.  GPU memory usage for the Python
 * [x] Try demucs on Ubuntu 22.04.5 LTS.  It generates the same four WAV files.
 * [ ] Try htdemucs_ft model.
 * [ ] Dataset labelling using Python scripting on GPU.
+* [ ] Can the model support streaming audio in chunks.
